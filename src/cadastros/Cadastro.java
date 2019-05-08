@@ -50,6 +50,15 @@ public class Cadastro extends Equipamentos {
 		consumoDiarioW = consumoTotal * tempoDeUsoDiario;
 		return  consumoDiarioW;
 	}
+	
+	public void apagar() {
+		quantidadeDeEquipamento = 0;
+	    consumoUnitario = 0;
+	    tempoDeUsoDiario = 0;
+	    consumoTotal = 0;
+	    consumoDiarioW = 0;
+	    return;
+	}
 
 	@Override
 	public String toString() {

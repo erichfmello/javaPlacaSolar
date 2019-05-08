@@ -14,4 +14,5 @@ public abstract class Equipamentos {
 	public abstract int calculoConsumoTotal();
 	public abstract int calculoConsumoDiarioW();
 	public abstract void imprimirDados();
+	public abstract void apagar();
 }

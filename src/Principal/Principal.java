@@ -1,23 +1,13 @@
 package Principal;
-import cadastros.*;
-
 import java.awt.EventQueue;
-import java.awt.Frame;
-
 import javax.swing.JFrame;
 import java.awt.Toolkit;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Principal {
 
@@ -27,7 +17,7 @@ public class Principal {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		int apagarPrincipal;
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -51,7 +41,7 @@ public class Principal {
 	 * Initialize the contents of the frame.
 	 */
 	
-	private void initialize() {
+	private void initialize() {		
 		frmPainisSolares = new JFrame();
 		frmPainisSolares.setTitle("Pain\u00E9is solares");
 		frmPainisSolares.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Erich\\Faculdade\\APS\\2\u00BA Semestre\\Imagens\\placasSolares.jpg"));
