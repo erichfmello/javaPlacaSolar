@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -12,6 +14,8 @@ import java.awt.event.WindowEvent;
 public class Principal {
 
 	private JFrame frmPainisSolares;
+	CadastrarEquipamentos cadastrarNovosEquipamentos = new CadastrarEquipamentos();
+	public int wp;
 
 	/**
 	 * Launch the application.
@@ -43,6 +47,15 @@ public class Principal {
 	
 	private void initialize() {		
 		frmPainisSolares = new JFrame();
+		frmPainisSolares.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent arg0) {
+				wp = 0;
+				for(int i=0; i<cadastrarNovosEquipamentos.todosOsEquipamentos.length; i++) {
+					wp = wp + (cadastrarNovosEquipamentos.todosOsEquipamentos[i].calculoConsumoDiarioW());
+				}
+			}
+		});
 		frmPainisSolares.setTitle("Pain\u00E9is solares");
 		frmPainisSolares.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Erich\\Faculdade\\APS\\2\u00BA Semestre\\Imagens\\placasSolares.jpg"));
 		frmPainisSolares.setBounds(100, 100, 487, 232);
@@ -52,7 +65,6 @@ public class Principal {
 		JButton btnNewButton = new JButton("Cadastrar Equipamentos");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CadastrarEquipamentos cadastrarNovosEquipamentos = new CadastrarEquipamentos();
 				cadastrarNovosEquipamentos.frmCadastroDeEquipamentos.setVisible(true);
 			}
 		});
@@ -88,5 +100,14 @@ public class Principal {
 		JLabel lblImprimirOsResultados = new JLabel("Imprimir os resultados calculados");
 		lblImprimirOsResultados.setBounds(217, 82, 248, 14);
 		frmPainisSolares.getContentPane().add(lblImprimirOsResultados);
+		
+		JButton btnTeste = new JButton("Teste");
+		btnTeste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Wp = " + wp + " W/dia");
+			}
+		});
+		btnTeste.setBounds(268, 158, 197, 23);
+		frmPainisSolares.getContentPane().add(btnTeste);
 	}
 }

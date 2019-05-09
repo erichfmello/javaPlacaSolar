@@ -7,30 +7,25 @@ public class CalculosPaineisSolares extends DadosPaineisSolares {
 	private double numeroDePaineis;
 	private double reservaDeEnergia;
 	
-	public CalculosPaineisSolares(double tensaoPainel, double correntePainel, double tensaoBateria, DadosResidenciais potenciaTotalHora) {
+	public CalculosPaineisSolares(double tensaoPainel, double correntePainel, double tensaoBateria, double potenciaTotalHora) {
 		
 		super(tensaoPainel, correntePainel);
 		
 		this.potenciaDeFato = tensaoBateria * correntePainel;
 		this.perdaDePotencia = getPotenciaPainel() - potenciaDeFato;
-		this.numeroDePaineis = (int)((potenciaTotalHora.getPotenciaTotalHora() / potenciaDeFato) + 1);
+		this.numeroDePaineis = (int)((potenciaTotalHora / potenciaDeFato) + 1);
 		
-		this.reservaDeEnergia = numeroDePaineis * potenciaDeFato - potenciaTotalHora.getPotenciaTotalHora();
+		this.reservaDeEnergia = numeroDePaineis * potenciaDeFato - potenciaTotalHora;
 	}
 	
-	public CalculosPaineisSolares(double potenciaPainel, double tensaoBateria, DadosResidenciais potenciaTotalHora) {
+	public CalculosPaineisSolares(double potenciaPainel, double tensaoBateria, int potenciaTotalHora) {
 		super (potenciaPainel);
 		
 		this.potenciaDeFato = getPotenciaPainel();
 		this.perdaDePotencia = getPotenciaPainel() - potenciaDeFato;
-
-		// Testes 
-		potenciaTotalHora.imprimirDados();
 		
-		
-		this.numeroDePaineis = ((potenciaTotalHora.getPotenciaTotalHora() / potenciaDeFato) + 1);
-		
-		this.reservaDeEnergia = numeroDePaineis * potenciaDeFato - potenciaTotalHora.getPotenciaTotalHora();
+		this.numeroDePaineis = ((potenciaTotalHora / potenciaDeFato) + 1);
+		this.reservaDeEnergia = numeroDePaineis * potenciaDeFato - potenciaTotalHora;
 	}
 
 	public double getPotenciaDeFato() {

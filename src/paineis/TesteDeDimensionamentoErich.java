@@ -135,7 +135,7 @@ public class TesteDeDimensionamentoErich {
 					switch (escolha) {
 					case "1":
 						potenciaPainel = Double.parseDouble(JOptionPane.showInputDialog("Qual a potência do painel?"));
-						painelDimenisonamento = new CalculosPaineisSolares(potenciaPainel, tensaoBateria, entradaDeDados);
+						//painelDimenisonamento = new CalculosPaineisSolares(potenciaPainel, tensaoBateria, entradaDeDados);
 												
 						do {
 							painelDimenisonamento.imprimirDados();
@@ -171,7 +171,7 @@ public class TesteDeDimensionamentoErich {
 					case "2":
 						tensaoPainel = Double.parseDouble(JOptionPane.showInputDialog("Qual a tensão do painel?"));
 						correntePainel = Double.parseDouble(JOptionPane.showInputDialog("Qual a corrente do painel?"));
-						painelDimenisonamento = new CalculosPaineisSolares(tensaoPainel, correntePainel, tensaoBateria, entradaDeDados);
+						//painelDimenisonamento = new CalculosPaineisSolares(tensaoPainel, correntePainel, tensaoBateria, entradaDeDados);
 						
 						do {
 							painelDimenisonamento.imprimirDados();
