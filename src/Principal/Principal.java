@@ -6,6 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import paineis.CalculosPaineisSolares;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -15,7 +17,8 @@ public class Principal {
 
 	private JFrame frmPainisSolares;
 	CadastrarEquipamentos cadastrarNovosEquipamentos = new CadastrarEquipamentos();
-	public int wp;
+	PainelSolar dimensionar = new PainelSolar();
+	public int wp = 0;
 
 	/**
 	 * Launch the application.
@@ -72,10 +75,27 @@ public class Principal {
 		frmPainisSolares.getContentPane().add(btnNewButton);
 		
 		JButton btnDimensionameno = new JButton("Dimensionameno");
+		btnDimensionameno.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (wp != 0) {
+					dimensionar = new PainelSolar(wp);
+					dimensionar.frmPaineisSolares.setVisible(true);
+				} else {
+					JOptionPane.showMessageDialog(null, "É necessário cadastrar os dados residenciáis!!!");					
+				}
+			}
+		});
 		btnDimensionameno.setBounds(10, 45, 197, 23);
 		frmPainisSolares.getContentPane().add(btnDimensionameno);
 		
 		JButton btnImprimirResultados = new JButton("Imprimir resultados");
+		btnImprimirResultados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Wp = " + wp + " W/dia");
+				dimensionar.bateria.imprimirDados();
+				dimensionar.cadastrarPaineis.dimensionamento.imprimirDados();
+			}
+		});
 		btnImprimirResultados.setBounds(10, 79, 197, 23);
 		frmPainisSolares.getContentPane().add(btnImprimirResultados);
 		
@@ -100,14 +120,5 @@ public class Principal {
 		JLabel lblImprimirOsResultados = new JLabel("Imprimir os resultados calculados");
 		lblImprimirOsResultados.setBounds(217, 82, 248, 14);
 		frmPainisSolares.getContentPane().add(lblImprimirOsResultados);
-		
-		JButton btnTeste = new JButton("Teste");
-		btnTeste.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Wp = " + wp + " W/dia");
-			}
-		});
-		btnTeste.setBounds(268, 158, 197, 23);
-		frmPainisSolares.getContentPane().add(btnTeste);
 	}
 }

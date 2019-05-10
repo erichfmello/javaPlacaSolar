@@ -21,8 +21,8 @@ public class CadastroPaineis {
 	private JTextField textFieldTempo;
 	private JTextField textFieldTensao;
 	private JTextField textFieldCorrente;
-	public CalculosPaineisSolares dimensionamento;
-	
+	public CalculosPaineisSolares dimensionamento;	
+	int wp = 0;
 
 	/**
 	 * Launch the application.
@@ -98,31 +98,19 @@ public class CadastroPaineis {
 		frmCadastrarPaineis.getContentPane().add(btnCancelar);
 		
 		JButton btnOk = new JButton("Ok");
-		btnOk.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnOk.setBounds(232, 99, 89, 23);
 		frmCadastrarPaineis.getContentPane().add(btnOk);
-		
-		JButton btnTeste = new JButton("Teste");
-		btnTeste.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dimensionamento.imprimirDados();
-			}
-		});
-		btnTeste.setBounds(10, 133, 89, 23);
-		frmCadastrarPaineis.getContentPane().add(btnTeste);
 	}
 	
-	public CadastroPaineis(DadosDaBateria bateria) {
-		initialize(bateria);
+	public CadastroPaineis(DadosDaBateria bateria, int wp) {
+		initialize(bateria, wp);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(DadosDaBateria bateria) {
+	private void initialize(DadosDaBateria bateria, int wp) {
+		this.wp = wp;
 		frmCadastrarPaineis = new JFrame();
 		frmCadastrarPaineis.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Erich\\Faculdade\\APS\\2\u00BA Semestre\\Imagens\\Bateria.jpg"));
 		frmCadastrarPaineis.setTitle("Cadastrar Paineis");
@@ -172,15 +160,21 @@ public class CadastroPaineis {
 		JButton btnOk = new JButton("Ok");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				bateria.getTensaoBateria();
-				dimensionamento = new CalculosPaineisSolares(Double.parseDouble(textFieldTensao.getText()), 
-						Double.parseDouble(textFieldCorrente.getText()), 
-						bateria.getTensaoBateria(), 
-						Double.parseDouble(textFieldTempo.getText()));
+				dimensionamento = new CalculosPaineisSolares(Double.parseDouble(textFieldTensao.getText()), Double.parseDouble(textFieldCorrente.getText()), bateria.getTensaoBateria(), (wp/Double.parseDouble(textFieldTempo.getText())));
+				frmCadastrarPaineis.dispose();
 			}
 		});
+		
+		JButton btnTeste = new JButton("Teste");
+		btnTeste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dimensionamento.imprimirDados();				
+			}
+		});
+		btnTeste.setBounds(10, 133, 89, 23);
+		frmCadastrarPaineis.getContentPane().add(btnTeste);
+		
 		btnOk.setBounds(232, 99, 89, 23);
 		frmCadastrarPaineis.getContentPane().add(btnOk);
 	}
-
 }

@@ -18,6 +18,7 @@ public class CalculosPaineisSolares extends DadosPaineisSolares {
 		this.reservaDeEnergia = numeroDePaineis * potenciaDeFato - potenciaTotalHora;
 	}
 	
+	// Metodo a remover
 	public CalculosPaineisSolares(double potenciaPainel, double tensaoBateria, int potenciaTotalHora) {
 		super (potenciaPainel);
 		
