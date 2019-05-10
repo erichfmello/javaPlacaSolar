@@ -165,15 +165,6 @@ public class CadastroPaineis {
 			}
 		});
 		
-		JButton btnTeste = new JButton("Teste");
-		btnTeste.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dimensionamento.imprimirDados();				
-			}
-		});
-		btnTeste.setBounds(10, 133, 89, 23);
-		frmCadastrarPaineis.getContentPane().add(btnTeste);
-		
 		btnOk.setBounds(232, 99, 89, 23);
 		frmCadastrarPaineis.getContentPane().add(btnOk);
 	}

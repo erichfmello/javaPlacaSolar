@@ -157,15 +157,5 @@ public class PainelSolar {
 		btnOk.setBounds(240, 81, 89, 23);
 		frmPaineisSolares.getContentPane().add(btnOk);
 		
-		JButton btnTeste = new JButton("Teste");
-		btnTeste.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, wp);
-				bateria.imprimirDados();
-				
-			}
-		});
-		btnTeste.setBounds(10, 115, 157, 23);
-		frmPaineisSolares.getContentPane().add(btnTeste);
 	}
 }
