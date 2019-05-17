@@ -62,49 +62,49 @@ public class SobreOPrograma {
 		lblErichFurmankiewiczDe.setBounds(10, 11, 181, 14);
 		frmSobreOProgrma.getContentPane().add(lblErichFurmankiewiczDe);
 		
-		JLabel lblMatheusDaSilva = new JLabel("Erich Furmankiewicz de Mello");
+		JLabel lblMatheusDaSilva = new JLabel("Evandro Borzi Marques");
 		lblMatheusDaSilva.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblMatheusDaSilva.setBounds(10, 36, 181, 14);
 		frmSobreOProgrma.getContentPane().add(lblMatheusDaSilva);
 		
-		JLabel lblMatheusDaSilva_1 = new JLabel("Matheus da Silva");
+		JLabel lblMatheusDaSilva_1 = new JLabel("Erich Furmankiewicz de Mello");
 		lblMatheusDaSilva_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblMatheusDaSilva_1.setBounds(10, 61, 181, 14);
 		frmSobreOProgrma.getContentPane().add(lblMatheusDaSilva_1);
 		
-		JLabel label_2 = new JLabel("Erich Furmankiewicz de Mello");
-		label_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_2.setBounds(10, 86, 181, 14);
-		frmSobreOProgrma.getContentPane().add(label_2);
+		JLabel lblMatheusDaSilva_3 = new JLabel("Matheus da Silva");
+		lblMatheusDaSilva_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblMatheusDaSilva_3.setBounds(10, 86, 181, 14);
+		frmSobreOProgrma.getContentPane().add(lblMatheusDaSilva_3);
 		
-		JLabel label_3 = new JLabel("Erich Furmankiewicz de Mello");
-		label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_3.setBounds(10, 111, 181, 14);
-		frmSobreOProgrma.getContentPane().add(label_3);
+		JLabel lblMatheusDaSilva_2 = new JLabel("Mateus Felix Bernardo");
+		lblMatheusDaSilva_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblMatheusDaSilva_2.setBounds(10, 111, 181, 14);
+		frmSobreOProgrma.getContentPane().add(lblMatheusDaSilva_2);
 		
 		JLabel lblRaTf = new JLabel("R.A.: N3482-91");
 		lblRaTf.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblRaTf.setBounds(201, 11, 181, 14);
 		frmSobreOProgrma.getContentPane().add(lblRaTf);
 		
-		JLabel lblRaDggf = new JLabel("R.A.: T7649-F9");
+		JLabel lblRaDggf = new JLabel("R.A.: N289H-C5");
 		lblRaDggf.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblRaDggf.setBounds(201, 36, 181, 14);
 		frmSobreOProgrma.getContentPane().add(lblRaDggf);
 		
-		JLabel lblRaDggf_1 = new JLabel("R.A.: D53GG-F0");
+		JLabel lblRaDggf_1 = new JLabel("R.A.: T7649-F9");
 		lblRaDggf_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblRaDggf_1.setBounds(201, 61, 181, 14);
 		frmSobreOProgrma.getContentPane().add(lblRaDggf_1);
 		
-		JLabel label_6 = new JLabel("R.A.: T7649-F9");
-		label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_6.setBounds(201, 86, 181, 14);
-		frmSobreOProgrma.getContentPane().add(label_6);
+		JLabel lblRaDggf_3 = new JLabel("R.A.: D53GG-F0");
+		lblRaDggf_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblRaDggf_3.setBounds(201, 86, 181, 14);
+		frmSobreOProgrma.getContentPane().add(lblRaDggf_3);
 		
-		JLabel label_7 = new JLabel("R.A.: T7649-F9");
-		label_7.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_7.setBounds(201, 111, 181, 14);
-		frmSobreOProgrma.getContentPane().add(label_7);
+		JLabel lblRaDggf_2 = new JLabel("R.A.: D5368-42");
+		lblRaDggf_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblRaDggf_2.setBounds(201, 111, 181, 14);
+		frmSobreOProgrma.getContentPane().add(lblRaDggf_2);
 	}
 }

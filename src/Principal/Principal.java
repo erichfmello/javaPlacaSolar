@@ -94,6 +94,7 @@ public class Principal {
 				JOptionPane.showMessageDialog(null, "Wp = " + wp + " W/dia");
 				dimensionar.bateria.imprimirDados();
 				dimensionar.cadastrarPaineis.dimensionamento.imprimirDados();
+				dimensionar.controladoresDeCarga.controladoresDeCarga.imprimirDados();
 			}
 		});
 		btnImprimirResultados.setBounds(10, 79, 197, 23);

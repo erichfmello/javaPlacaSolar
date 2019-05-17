@@ -160,7 +160,8 @@ public class CadastroPaineis {
 		JButton btnOk = new JButton("Ok");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dimensionamento = new CalculosPaineisSolares(Double.parseDouble(textFieldTensao.getText()), Double.parseDouble(textFieldCorrente.getText()), bateria.getTensaoBateria(), (wp/Double.parseDouble(textFieldTempo.getText())));
+				dimensionamento = new CalculosPaineisSolares(Double.parseDouble(textFieldTensao.getText()), Double.parseDouble(textFieldCorrente.getText()), bateria.getTensaoBateria(), 
+						(wp/Double.parseDouble(textFieldTempo.getText())));
 				frmCadastrarPaineis.dispose();
 			}
 		});

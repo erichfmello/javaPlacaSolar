@@ -10,13 +10,15 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import Controladores.*;
 
 public class PainelSolar {
 
 	public JFrame frmPaineisSolares;
 	public DadosDaBateria bateria = new DadosDaBateria("Nome", "Nome", 0); 
 	CadastrarBateria cadastrarBateria;
-	CadastroPaineis cadastrarPaineis = new CadastroPaineis();;
+	CadastroPaineis cadastrarPaineis = new CadastroPaineis();
+	Controladores controladoresDeCarga;
 	public int wp;
 
 	/**
@@ -49,7 +51,7 @@ public class PainelSolar {
 		frmPaineisSolares = new JFrame();
 		frmPaineisSolares.setTitle("Paineis Solares");
 		frmPaineisSolares.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Erich\\Faculdade\\APS\\2\u00BA Semestre\\Imagens\\dimensionamento.jpg"));
-		frmPaineisSolares.setBounds(100, 100, 350, 188);
+		frmPaineisSolares.setBounds(100, 100, 374, 188);
 		frmPaineisSolares.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmPaineisSolares.getContentPane().setLayout(null);
 		
@@ -74,11 +76,11 @@ public class PainelSolar {
 		frmPaineisSolares.getContentPane().add(btnPaineisSolares);
 		
 		JLabel lblCadastrarBateria = new JLabel("Cadastrar bateria");
-		lblCadastrarBateria.setBounds(177, 15, 152, 14);
+		lblCadastrarBateria.setBounds(177, 15, 197, 14);
 		frmPaineisSolares.getContentPane().add(lblCadastrarBateria);
 		
 		JLabel lblCadastrarPaineisSolares = new JLabel("Cadastrar paineis solares");
-		lblCadastrarPaineisSolares.setBounds(177, 49, 152, 14);
+		lblCadastrarPaineisSolares.setBounds(177, 49, 197, 14);
 		frmPaineisSolares.getContentPane().add(lblCadastrarPaineisSolares);
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -89,6 +91,20 @@ public class PainelSolar {
 		});
 		btnCancelar.setBounds(240, 115, 89, 23);
 		frmPaineisSolares.getContentPane().add(btnCancelar);
+		
+		JButton btnInversores = new JButton("Controladores");
+		btnInversores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controladoresDeCarga = new Controladores();
+				controladoresDeCarga.frmControladores.setVisible(true);
+			}
+		});
+		btnInversores.setBounds(10, 79, 157, 23);
+		frmPaineisSolares.getContentPane().add(btnInversores);
+		
+		JLabel lblCalculoDosInversores = new JLabel("Calculo dos Controladores de carga");
+		lblCalculoDosInversores.setBounds(177, 83, 197, 14);
+		frmPaineisSolares.getContentPane().add(lblCalculoDosInversores);
 	}
 	
 	public PainelSolar(int wp) {
@@ -157,5 +173,14 @@ public class PainelSolar {
 		btnOk.setBounds(240, 81, 89, 23);
 		frmPaineisSolares.getContentPane().add(btnOk);
 		
+		JButton btnInversores = new JButton("Controladores");
+		btnInversores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controladoresDeCarga = new Controladores(cadastrarPaineis);
+				controladoresDeCarga.frmControladores.setVisible(true);
+			}
+		});
+		btnInversores.setBounds(10, 79, 157, 23);
+		frmPaineisSolares.getContentPane().add(btnInversores);
 	}
 }

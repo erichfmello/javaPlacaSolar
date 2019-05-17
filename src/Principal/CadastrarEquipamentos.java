@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JTextField;
+import javax.swing.JScrollBar;
 
 public class CadastrarEquipamentos {
 	
